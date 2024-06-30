@@ -4,17 +4,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      TOKEN: ${{secrets.TOKEN}}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.12
         uses: actions/setup-python@v1
         with:
           python-version: 3.12
-      - name: Install dependencies
-        run: |
+      # - name: Install dependencies
+      #   run: |
+        env:
+          TOKEN: ${{secrets.TOKEN}}
       - name: Run script
         run: |
-          # main.pyの実行
           python main.py
