@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SUPER_SECRET: ${{secrets.TOKEN}}
+      TOKEN: ${{secrets.TOKEN}}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.12
