@@ -2,7 +2,7 @@ on:
     workflow_dispatch:
 
 env:
-  SOME_VAR: 'workflow-scope' # Workflowスコープの環境変数
+  SOME_VAR: $${{  secrets.TOKEN  }}
 
 jobs:
   one_job:
