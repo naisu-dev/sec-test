@@ -1,18 +1,11 @@
 on:
-  workflow_dispatch:
+    workflow_dispatch:
+
+env:
+  SOME_VAR: 'workflow-scope' # Workflowスコープの環境変数
 
 jobs:
-  build:
+  one_job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.12
-          TOKEN: ${{  secrets.TOKEN  }}
-        env:
-          TOKEN: ${{  vars.TOKEN  }}
-      - name: Run script
-        run: |
-          python main.py
+      - run: echo ${{ env.SOME_VAR }} # 環境変数の参照
