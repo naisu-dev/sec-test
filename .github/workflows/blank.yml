@@ -3,6 +3,8 @@ on:
 
 jobs:
   build:
+    env:
+      TOKEN: ${{  secrets.TOKEN  }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,8 +14,6 @@ jobs:
           python-version: 3.12
       # - name: Install dependencies
       #   run: |
-        env:
-          TOKEN: ${{  secrets.TOKEN  }}
       - name: Run script
         run: |
           python main.py
