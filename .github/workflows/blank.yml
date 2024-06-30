@@ -8,4 +8,4 @@ jobs:
   one_job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ env.SOME_VAR }} # 環境変数の参照
+      - run: echo ${{  env.SOME_VAR  }}
