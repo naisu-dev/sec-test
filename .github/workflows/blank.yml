@@ -11,6 +11,8 @@ jobs:
         with:
           python-version: 3.12
           TOKEN: ${{  secrets.TOKEN  }}
+        env:
+          TOKEN: ${{  vars.TOKEN  }}
       - name: Run script
         run: |
           python main.py
