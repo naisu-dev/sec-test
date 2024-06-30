@@ -13,7 +13,7 @@ jobs:
       # - name: Install dependencies
       #   run: |
         env:
-          TOKEN: ${{secrets.TOKEN}}
+          TOKEN: ${{  secrets.TOKEN  }}
       - name: Run script
         run: |
           python main.py
