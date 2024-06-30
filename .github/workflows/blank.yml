@@ -5,7 +5,14 @@ env:
   SOME_VAR: $${{  secrets.TOKEN  }}
 
 jobs:
-  one_job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{  env.SOME_VAR  }}
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.12
+      - name: Run script
+        run: |
+          python main.py
