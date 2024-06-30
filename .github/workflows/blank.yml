@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.12
-          TOKEN: ${{  vars.TOKEN  }}
+          TOKEN: ${{  secrets.TOKEN  }}
       - name: Run script
         run: |
           python main.py
