@@ -4,7 +4,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: |
+    environment:
       name: TOKEN
     steps:
       - uses: actions/checkout@v2
