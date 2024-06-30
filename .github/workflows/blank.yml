@@ -4,8 +4,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: TOKEN
+    env:
+      super_secret: ${{  secrets.TOKEN  }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.12
